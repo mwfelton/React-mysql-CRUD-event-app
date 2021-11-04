@@ -17,9 +17,11 @@ app.post("/admin", (req, res) => {
     const title = req.body.title
     const location = req.body.location
     const price = req.body.price;
+    const image = req.body.image;
+    const date = req.body.date;
 
-    db.query('INSERT INTO class (title, location, price) VALUES (?,?,?)',
-    [title, location, price], 
+    db.query('INSERT INTO class (title, location, price, image, date) VALUES (?,?,?,?,?)',
+    [title, location, price, image, date], 
     (err, result) => {
         if (err) {
             console.log(err)
@@ -53,7 +55,16 @@ app.put('/update', (req, res) => {
     })
 })
 
-// app.delete()
+app.delete('/delete/:id', (req, res) => {
+    const id = req.params.id
+    db.query("DELETE FROM class Where id = ?", id, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    })
+})
  
 app.listen(3001, () => {
     console.log('server is running on port 3001')

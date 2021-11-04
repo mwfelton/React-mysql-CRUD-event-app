@@ -30,11 +30,11 @@ return (
           {workshopList.map((val, key) => {
             return (
               <div className="card">
-                <img src="{val." alt=""></img>
+                <img src={val.image} alt=""></img>
                 <h2>{val.title}</h2>
                 <h4>{val.location}</h4>
                 <p>{val.price}</p>
-                <button>more info</button> <button>Register</button>
+                <button>Register</button>
               </div>
             )
           })}
