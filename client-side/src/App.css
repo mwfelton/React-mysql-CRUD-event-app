@@ -6,13 +6,27 @@
     font-family: 'Poppins', sans-serif;
   }
 
+#root {
+  height: 100vh;
+}
+
+/* font */
+@font-face {
+  font-family: "adelia";
+  src: local("adelia"),
+   url("./fonts/adelia.ttf") format("truetype");
+  }
+
 .App {
   text-align: center;
 }
 
 .main {
   align-items: center;
+  background-color: #36454F;
 }
+
+/* Admin page inputs */
 
 .inputs {
   width: 100vw;
@@ -33,38 +47,258 @@ button:hover {
   cursor: pointer;
 }
 
+/* Yogaclasses */
+
+.yogaclasses {
+  background-color: #36454F;
+  height: 100vh;
+  width: 100vw;
+}
+
 .results {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
-.workshops{
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-  border: 1px solid blue;
+.results h2 {
   text-align: center;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.yogaclasses h2 {
+  color: #fff;
+  letter-spacing: 4px;
 }
-/* 
-.inputEdit {
 
-} */
+.workshopContainer {
+  background-color: #36454F;
+  width: 100vw;
+}
+
+.workshops{
+  justify-items: center;
+  max-width: 1000px;
+  margin:  auto;
+  padding: 10px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  background-color: #36454F;
+}
+
+.card-container {
+  width: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(200px, minmax(250px, 1fr));
+}
+
+.card {
+  border: 1px solid #fff;
+  text-align: center;
+  background-color: #C9BAB0;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.imagebox {
+ width: 100%;
+ height: 220px;
+ margin-bottom: 10px;
+ object-fit: cover;
+ overflow: hidden;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/* Yogaclass page controls */
+
+.controls button {
+  border: none;
+  color: white;
+  letter-spacing: 4px;
+  background-color: #36454F;
+  font-size: 1rem;
+  
+}
+
+
+/* home page */
+
+.main-bg {
+    max-width: 100%;
+    height: auto;
+    min-height: 600px;  
+    background-size: cover;
+}
+
+.overlay {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin-top: 120px;
+  opacity: 100%;
+}
+
+.title {
+  font-size: 8rem;
+  letter-spacing: 3rem;
+  color: white;
+  opacity: none;
+}
+
+.sub-heading{
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  color: white;
+}
+
+/* Navbar */
+
+.Navbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+}
+
+.Navbar .leftSide{
+  flex: 20%;
+  background-color: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  font-family: "adelia";
+  letter-spacing: 3px;
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.Navbar .rightSide{
+  flex: 80%;
+  background: none;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.Navbar .rightSide .nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  margin-right: 30px;
+  letter-spacing: 3px;
+}
+
+.Navbar .rightSide .nav-links a:not(:last-child) { 
+  border-right:solid 1px #fff;
+  padding-right: 30px;
+}
+
+
+.Navbar .rightSide button {
+    display: none;
+    background: none;
+    border: none;
+}
+
+.Navbar .rightSide #hidden {
+  display: flex;
+}
+
+.burger {
+  color: white;
+}
+
+/* Responsive */
+
+@media only screen and (min-width: 860px) {
+  .break {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .Navbar .rightSide .nav-links a {
+    font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+  .Navbar .rightSide button {
+    display: flex;
+  }
+
+  .Navbar .rightSide .nav-links {
+    display: none;
+  }
+
+  .Navbar .rightSide .nav-links a:not(:last-child) { 
+    border-right:none;
+    padding-right: 0px;
+  }
+
+  .Navbar .rightSide #hidden {
+    position: absolute;
+    right: 0px;
+    top: 10vh;
+    height: 230px;
+    width: 100%;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .Navbar .rightSide #hidden a{
+    margin-top: 15px;
+    font-size: 1rem;
+    margin-right: 25px;
+  }
+
+  .Navbar .leftSide {
+    margin-left: 15px;
+  }
+
+  .title-container {
+    margin-top: 50px;
+    /* margin-bottom: 40px; */
+  }
+
+  .title {
+    font-size: 2rem;
+    letter-spacing: 23px;
+    margin-bottom: 10px;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+    letter-spacing: 10px;
+  }
+
+  .main-bg {
+    min-height: 200px;
+    height: 300px;
+  }
+
+  .results {
+    margin-top: 20px;
+  }
+}
+
+

@@ -1,46 +1,23 @@
 import './App.css';
 // import Admin from "./components/Admin.js"
-import { useState } from "react";
-import Axios from 'axios'
 
 //admin page figure out
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Admin from './components/Admin';
+import Home from './components/Home';
+import Yogaclasses from './components/Yogaclasses';
 
 
 function App() {
-
-    const [workshopList, setWorkshopList] = useState([])
-
-      Axios.get('http://localhost:3001/home').then((response) => {
-          setWorkshopList(response.data);
-      })
   
-
 return (
   <Router>
-  <Switch>  
-    <Route path="/admin" exact component={Admin} />
-    <section className="main">
-        <div className="results">
-        <h2>Workshops</h2>
-        </div>
+  {/* <Navbar /> */}
+  <Switch>
+    <Route path="/" exact component={Home} />
+    <Route path="/admin" component={Admin} />
+    <Route path="/yoga-classes-zurich" component={Yogaclasses} />
 
-        <div className="workshops">
-          {workshopList.map((val, key) => {
-            return (
-              <div className="card">
-                <img src={val.image} alt=""></img>
-                <h2>{val.title}</h2>
-                <h4>{val.location}</h4>
-                <p>{val.price}</p>
-                <button>Register</button>
-              </div>
-            )
-          })}
-
-        </div>
-    </section>
   </Switch>  
 </Router>
 )};
