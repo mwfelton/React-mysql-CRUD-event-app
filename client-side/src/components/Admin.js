@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios'
 import { FaRegEdit } from 'react-icons/fa';
 import { FaRegTrashAlt } from 'react-icons/fa';
+// import { FiSave } from 'react-icons/fi';
+
 import Navbar from './Navbar';
-import Front from './Front';
-import Back from './Back';
 
 const Admin = () => {
 
@@ -16,11 +16,17 @@ const Admin = () => {
 
     const [workshopList, setWorkshopList] = useState([])
 
+    const [newTitle, setNewTitle] = useState("")
+
     useEffect(() => {
       Axios.get('http://localhost:3001/home').then((response) => {
       setWorkshopList(response.data);
       }).catch(err => console.log(err));
   }, [])
+
+  //  Axios.get('http://localhost:3001/home').then((response) => {
+  //     setWorkshopList(response.data);
+  // })
  
     const addWorkshop = () => {
         Axios.post('http://localhost:3001/admin', {
@@ -40,6 +46,53 @@ const Admin = () => {
             console.log('success')
         })
     }
+
+  const updateTitle = (id) => {
+    Axios.put('http://localhost:3001/update', {title: newTitle, id: id}).then(
+    (response) => {
+      setWorkshopList(
+        workshopList.map((val) => {
+          return val.id === id ? {
+              id: val.id,
+              title: newTitle,
+              location: val.location,
+              price: val.price
+            }
+            : val
+        })
+      )
+    })
+}
+
+  // const editFunction = () => {
+  //   // const editIcon = document.getElementsByClassName('.makeEditable')
+  //   // console.log(editIcon)
+
+  //   const isEditable = document.getElementsByClassName('.isEditable')
+  //   isEditable.setAttribute(contentEditable, true)
+  // }
+
+  const editFunction = () => {
+    
+    console.log('click happens')
+    // document.getElementsByClassName('.showEdit').style.display = 'none'
+  
+  }
+
+
+
+const deleteWorkshop = (id) => {
+  Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+    setWorkshopList(workshopList.filter((val) => {
+      return val.id !== id
+    }))
+  })
+}
+
+  const addImage = (name) => {
+    const pic = name
+    return `img/${pic}.jpg`
+  }
 
     return (
         <section className="main">
@@ -69,12 +122,36 @@ const Admin = () => {
                     setImage(event.target.value)}}/>
                 <button onClick={addWorkshop}>Add Workshop</button>
             </div>
+                
+            <div className="workshops">
+              {workshopList.map((val, key) => {
+                return (
 
-        <div className="cardContainer">
-        <Front />
-        <Back />
-        </div>
-            
+                  <div className="card">
+                    <div className="showEdit">
+                      <img src={addImage(val.image)} alt=""></img>
+                      <div className='makeEditable'>
+                      <h2 className="inputEdit">{val.title}</h2>
+                      <h4 className="inputEdit">{val.location}</h4>
+                      <p className="inputEdit">{val.date}</p>
+                      <p className="inputEdit">{val.price}</p>
+                    </div>
+
+                    </div>
+ 
+                    <div>
+                     <FaRegEdit onClick={() => {editFunction()}}/>
+                     <FaRegTrashAlt onClick={() => {deleteWorkshop(val.id)}}/>
+                    </div>
+                  
+                    <input type="text" placeholder="edit this" onChange={(event) => {
+                  setNewTitle(event.target.value)
+                  }} />
+                    <button onClick={() => {updateTitle(val.id)}}>Update</button>
+                  </div>
+                )
+              })}
+            </div>
         </section>
 )};
 
