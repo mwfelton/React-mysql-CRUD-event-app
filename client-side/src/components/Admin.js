@@ -128,30 +128,27 @@ const deleteWorkshop = (id) => {
                 return (
 
                   <div className="card">
-                    <div className="showEdit">
                       <img src={addImage(val.image)} alt=""></img>
                       <div className='makeEditable'>
                       <h2 className="inputEdit">{val.title}</h2>
                       <h4 className="inputEdit">{val.location}</h4>
                       <p className="inputEdit">{val.date}</p>
                       <p className="inputEdit">{val.price}</p>
-                    </div>
+                  </div>
 
-                    </div>
- 
+                  
                     <div>
-                     <FaRegEdit onClick={() => {editFunction()}}/>
+                     <FaRegEdit onClick={() => {}}/>
                      <FaRegTrashAlt onClick={() => {deleteWorkshop(val.id)}}/>
                     </div>
                   
                     <input type="text" placeholder="edit this" onChange={(event) => {
-                  setNewTitle(event.target.value)
-                  }} />
+                      setNewTitle(event.target.value)
+                    }} />
                     <button onClick={() => {updateTitle(val.id)}}>Update</button>
-                  </div>
-                )
-              })}
-            </div>
+              </div>
+                )})}
+             </div>
         </section>
 )};
 
