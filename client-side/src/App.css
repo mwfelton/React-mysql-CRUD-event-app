@@ -301,4 +301,32 @@ button:hover {
   }
 }
 
+.editDeleteIcons {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
 
+/* flip function */
+
+.backCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center ;
+  align-items: center;
+  border: 1px solid #fff;
+  text-align: center;
+  background-color: #C9BAB0;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.backCard input{
+  margin: 5px;
+  width: 65%;
+}
+
+.backCard img{
+  margin-bottom: 10px;
+}
