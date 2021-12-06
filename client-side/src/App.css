@@ -99,7 +99,10 @@ button:hover {
 .card {
   border: 1px solid #fff;
   text-align: center;
-  background-color: #C9BAB0;
+  /* background-color: #C9BAB0; */
+  background-color: 
+ 
+  #F8F0E3;
   overflow: hidden;
   max-width: 300px;
 }
@@ -125,7 +128,6 @@ button:hover {
   font-size: 1rem;
   
 }
-
 
 /* home page */
 
@@ -210,7 +212,6 @@ button:hover {
   padding-right: 30px;
 }
 
-
 .Navbar .rightSide button {
     display: none;
     background: none;
@@ -240,6 +241,29 @@ button:hover {
 }
 
 @media only screen and (max-width: 860px) {
+
+.inputSection {
+  
+}
+
+.inputSection input {
+  display: block;
+  width: 300px;
+  margin-bottom: 10px;
+}
+.inputSection input label {
+  align-items: center;
+}
+
+.addWorkshopMain form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
   .Navbar .rightSide button {
     display: flex;
   }
@@ -330,3 +354,75 @@ button:hover {
 .backCard img{
   margin-bottom: 10px;
 }
+
+.addWorkshopMain form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.addWorkshopMain p, h3{
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* .addWorkshopMain div {
+  margin-top: 10px;
+} */
+
+.inputSection label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.inputSection  {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.inputSection input {
+  margin-right: 30px;
+  background-color: #F9F5EC;
+  border: none;
+  border-radius: 5px;
+}
+
+.selectImage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.images input {
+  margin-right: 30px;
+  background-color: #F9F5EC;
+  border: none;
+  border-radius: 5px;
+}
+
+.images label {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+
+/* Error Page */
+
+
+.error {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.errorPage{
+  justify-items: center;
+}
+
+.bulb {
+  width: 150px;
+}
+

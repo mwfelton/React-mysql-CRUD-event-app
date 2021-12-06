@@ -3,7 +3,7 @@ import './App.css';
 
 //admin page figure out
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Admin from './components/Admin';
+import Admin from './components/admin-page/Admin';
 import Home from './components/Home';
 import Yogaclasses from './components/Yogaclasses';
 

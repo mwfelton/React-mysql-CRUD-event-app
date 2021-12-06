@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios'
-import { FaRegEdit } from 'react-icons/fa';
-import { FaRegTrashAlt } from 'react-icons/fa';
-import Navbar from './Navbar';
+
 import Front from './Front';
 import Back from './Back';
+import Error from '../Error';
 
-const Admin = () => {
+
+const AddWorkshop = () => {
 
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState(0);
@@ -16,12 +16,33 @@ const Admin = () => {
 
     const [workshopList, setWorkshopList] = useState([])
 
+    const [editId, setEditId] = useState(null);
+
+    const [showError, setShowError] = useState(false)
+
+    const resetForm = () => {
+        document.getElementById("myForm").reset();
+    }
+
+    const resetError = () => {
+        setShowError(false)
+        }
+    
+
+    console.log(showError)
+    
     useEffect(() => {
       Axios.get('http://localhost:3001/home').then((response) => {
-      setWorkshopList(response.data);
-      }).catch(err => console.log(err));
-  }, [])
- 
+      setWorkshopList(response.data)
+      }).catch(err => {
+          setShowError(true)
+          console.log(err)
+        });
+    }, [])
+
+    console.log(showError)
+  
+
     const addWorkshop = () => {
         Axios.post('http://localhost:3001/admin', {
             title: title,
@@ -38,15 +59,19 @@ const Admin = () => {
               date: date
             }])
             console.log('success')
+            resetForm()
         })
     }
 
     return (
-        <section className="main">
-        <Navbar />
-            <h1>THIS IS THE ADMIN PAGE</h1>
-            <div className="inputs">
-                <label>Workshop Title</label>
+        <section className="addWorkshopMain">
+            <form action="" className="myForm">
+            <div className="head">
+                <h3>Add a Workshop</h3>
+            </div>
+
+            <div className="inputSection">
+                <label>Workshop</label>
                 <input type="text" onChange={(event) => {
                     setTitle(event.target.value)}}/>
                 <label>Location</label>
@@ -60,22 +85,40 @@ const Admin = () => {
                   onChange={(event) => {
                   setPrice(event.target.value)
                   }}/>
-                <p>Select Image</p>
+            </div>
+
+            <p>Select Image</p>
+
+
+            <div className="images">
+
                 <label>Angmardana</label>
                 <input type="radio" value="angamardana" onChange={(event) => {
                     setImage(event.target.value)}}/>
                 <label>Yogasanas</label>
                 <input type="radio" value="yogasanas" onChange={(event) => {
                     setImage(event.target.value)}}/>
+            </div>
+
+            <div>
                 <button onClick={addWorkshop}>Add Workshop</button>
             </div>
 
-        <div className="cardContainer">
-        <Front />
-        <Back />
-        </div>
+            </form>
+
+            {showError
+                ? <Error />
+                : resetError
+            }
+
+            <Front workshopList={workshopList}/>
+            <Back workshopList={workshopList} setWorkshopList={setWorkshopList}/>
+
+        
             
+
+
         </section>
 )};
 
-export default Admin;
+export default AddWorkshop;
