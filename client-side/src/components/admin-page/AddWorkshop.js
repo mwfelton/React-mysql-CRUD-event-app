@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import Axios from 'axios'
-
-import Front from './Front';
-import Back from './Back';
-import Error from '../Error';
-
 
 const AddWorkshop = () => {
 
@@ -16,33 +11,18 @@ const AddWorkshop = () => {
 
     const [workshopList, setWorkshopList] = useState([])
 
-    const [editId, setEditId] = useState(null);
-
-    const [showError, setShowError] = useState(false)
+    useEffect(() => {
+        Axios.get('http://localhost:3001/home').then((response) => {
+        setWorkshopList(response.data)
+        }).catch(err => {
+            console.log(err)
+          });
+      }, [])  
 
     const resetForm = () => {
         document.getElementById("myForm").reset();
     }
-
-    const resetError = () => {
-        setShowError(false)
-        }
     
-
-    console.log(showError)
-    
-    useEffect(() => {
-      Axios.get('http://localhost:3001/home').then((response) => {
-      setWorkshopList(response.data)
-      }).catch(err => {
-          setShowError(true)
-          console.log(err)
-        });
-    }, [])
-
-    console.log(showError)
-  
-
     const addWorkshop = () => {
         Axios.post('http://localhost:3001/admin', {
             title: title,
@@ -66,9 +46,8 @@ const AddWorkshop = () => {
     return (
         <section className="addWorkshopMain">
             <form action="" className="myForm">
-            <div className="head">
-                <h3>Add a Workshop</h3>
-            </div>
+
+            <h3>Add a Workshop</h3>
 
             <div className="inputSection">
                 <label>Workshop</label>
@@ -81,14 +60,13 @@ const AddWorkshop = () => {
                 <input type="text" onChange={(event) => {
                     setDate(event.target.value)}}/>
                 <label>Price</label>
-                <input type="number"
+                <input type="text"
                   onChange={(event) => {
                   setPrice(event.target.value)
                   }}/>
             </div>
 
             <p>Select Image</p>
-
 
             <div className="images">
 
@@ -103,20 +81,7 @@ const AddWorkshop = () => {
             <div>
                 <button onClick={addWorkshop}>Add Workshop</button>
             </div>
-
             </form>
-
-            {showError
-                ? <Error />
-                : resetError
-            }
-
-            <Front workshopList={workshopList}/>
-            <Back workshopList={workshopList} setWorkshopList={setWorkshopList}/>
-
-        
-            
-
 
         </section>
 )};

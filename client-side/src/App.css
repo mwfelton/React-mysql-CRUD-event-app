@@ -21,12 +21,109 @@
   text-align: center;
 }
 
+/* home page */
+
+.main-bg {
+  max-width: 100%;
+  height: auto;
+  min-height: 600px;  
+  background-size: cover;
+}
+
+.overlay {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+justify-items: center;
+margin-top: 120px;
+opacity: 100%;
+}
+
+.title {
+font-size: 8rem;
+letter-spacing: 3rem;
+color: white;
+opacity: none;
+}
+
+.sub-heading{
+font-size: 1.5rem;
+letter-spacing: 10px;
+color: white;
+}
+
+/* Navbar */
+
+.Navbar {
+width: 100%;
+height: 10vh;
+display: flex;
+}
+
+.Navbar .leftSide{
+flex: 20%;
+background-color: none;
+justify-content: center;
+align-items: center;
+display: flex;
+}
+
+.logo {
+font-family: "adelia";
+letter-spacing: 3px;
+font-size: 1em;
+color: white;
+text-decoration: none;
+margin-left: 20px;
+}
+
+.Navbar .rightSide{
+flex: 80%;
+background: none;
+display: flex;
+justify-content: right;
+align-items: center;
+}
+
+.Navbar .rightSide .nav-links a {
+text-decoration: none;
+color: white;
+font-size: 1rem;
+margin-right: 30px;
+letter-spacing: 3px;
+}
+
+.Navbar .rightSide .nav-links a:not(:last-child) { 
+border-right:solid 1px #fff;
+padding-right: 30px;
+}
+
+.Navbar .rightSide button {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.Navbar .rightSide #hidden {
+display: flex;
+}
+
+.burger {
+color: white;
+}
+
+/* Admin Component */
+
 .main {
   align-items: center;
   background-color: #36454F;
 }
-
-/* Admin page inputs */
 
 .inputs {
   width: 100vw;
@@ -34,10 +131,6 @@
   flex-direction: column;
   align-items: center;
   margin: 10px;
-}
-
-.inputs input {
-  width: 200px;
 }
 
 button {
@@ -85,6 +178,7 @@ button:hover {
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
   background-color: #36454F;
+  grid-auto-rows: min-content;
 }
 
 .card-container {
@@ -99,7 +193,6 @@ button:hover {
 .card {
   border: 1px solid #fff;
   text-align: center;
-  /* background-color: #C9BAB0; */
   background-color: 
  
   #F8F0E3;
@@ -109,7 +202,7 @@ button:hover {
 
 .imagebox {
  width: 100%;
- height: 220px;
+ height: 240px;
  margin-bottom: 10px;
  object-fit: cover;
  overflow: hidden;
@@ -129,102 +222,181 @@ button:hover {
   
 }
 
-/* home page */
+/* Error Page */
 
-.main-bg {
-    max-width: 100%;
-    height: auto;
-    min-height: 600px;  
-    background-size: cover;
+.error {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  letter-spacing: 2px;
 }
 
-.overlay {
-    width: 100%;
-    margin: 0 auto;
+.errorPage{
+  justify-items: center;
 }
 
-.title-container {
+.zen {
+  width: 200px;
+  margin: 30px;
+}
+
+.bulb {
+  width: 150px;
+}
+
+/* Front & Back CARDS Components */
+
+/* Back Component  */
+
+/* .workshops{
+  justify-items: center;
+  max-width: 1000px;
+  margin:  auto;
+  padding: 10px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  background-color: #36454F;
+  grid-auto-rows: min-content; */
+
+  .frontCard {
+    border: 1px solid #fff;
+    text-align: center;
+    background-color: #D7DADC;
+    letter-spacing: 1px;
+    max-height: 470px;
+    overflow: auto;
+
+  }
+
+  .info {
+    margin-top: 5px;
+    margin-bottom: 7px;
+  }
+
+
+.backCard {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-items: center ;
   align-items: center;
-  justify-items: center;
-  margin-top: 120px;
-  opacity: 100%;
+  border: 1px solid #fff;
+  text-align: center;
+  background-color: #D7DADC;
+  overflow: hidden;
+  max-width: 300px;
 }
 
-.title {
-  font-size: 8rem;
-  letter-spacing: 3rem;
-  color: white;
-  opacity: none;
-}
-
-.sub-heading{
+.backCard input{
+  margin: 5px;
+  width: 65%;
+  text-align: center;
+  background-color: #EFEAE7;
+  border: none;
   font-size: 1.5rem;
-  letter-spacing: 10px;
-  color: white;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
-/* Navbar */
-
-.Navbar {
-  width: 100%;
-  height: 10vh;
-  display: flex;
-}
-
-.Navbar .leftSide{
-  flex: 20%;
-  background-color: none;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.logo {
-  font-family: "adelia";
-  letter-spacing: 3px;
-  font-size: 1em;
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-.Navbar .rightSide{
-  flex: 80%;
-  background: none;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-
-.Navbar .rightSide .nav-links a {
-  text-decoration: none;
-  color: white;
+.backCard .location {
   font-size: 1rem;
-  margin-right: 30px;
-  letter-spacing: 3px;
 }
 
-.Navbar .rightSide .nav-links a:not(:last-child) { 
-  border-right:solid 1px #fff;
-  padding-right: 30px;
+.backCard .date {
+  font-size: 1rem;
 }
 
-.Navbar .rightSide button {
-    display: none;
-    background: none;
-    border: none;
+.backCard .price {
+  font-size: 1rem;
 }
 
-.Navbar .rightSide #hidden {
+.backCard img{
+  margin-bottom: 10px;
+}
+
+.backCard p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.editImage {
   display: flex;
+  width: 85%;
 }
 
-.burger {
+.editDeleteIcons {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.editDeleteIconsBack {
+  width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* AddWorkshop Component */
+
+.addWorkshopMain form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.addWorkshopMain p, h3{
+  color: white;
+  margin-bottom: 10px;
+}
+
+.inputSection label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.inputSection  {
+  margin-bottom: 20px;
   color: white;
 }
+
+.inputSection input {
+  margin-right: 30px;
+  background-color: #F9F5EC;
+  border: none;
+  border-radius: 5px;
+}
+
+.selectImage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.images input {
+  margin-right: 30px;
+  background-color: #F9F5EC;
+  border: none;
+  border-radius: 5px;
+}
+
+.images label {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+
+
 
 /* Responsive */
 
@@ -242,9 +414,6 @@ button:hover {
 
 @media only screen and (max-width: 860px) {
 
-.inputSection {
-  
-}
 
 .inputSection input {
   display: block;
@@ -262,7 +431,6 @@ button:hover {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 
   .Navbar .rightSide button {
     display: flex;
@@ -324,105 +492,3 @@ button:hover {
     margin-top: 20px;
   }
 }
-
-.editDeleteIcons {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-}
-
-/* flip function */
-
-.backCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center ;
-  align-items: center;
-  border: 1px solid #fff;
-  text-align: center;
-  background-color: #C9BAB0;
-  overflow: hidden;
-  max-width: 300px;
-}
-
-.backCard input{
-  margin: 5px;
-  width: 65%;
-}
-
-.backCard img{
-  margin-bottom: 10px;
-}
-
-.addWorkshopMain form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.addWorkshopMain p, h3{
-  color: white;
-  margin-bottom: 10px;
-}
-
-/* .addWorkshopMain div {
-  margin-top: 10px;
-} */
-
-.inputSection label {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.inputSection  {
-  margin-bottom: 20px;
-  color: white;
-}
-
-.inputSection input {
-  margin-right: 30px;
-  background-color: #F9F5EC;
-  border: none;
-  border-radius: 5px;
-}
-
-.selectImage{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.images input {
-  margin-right: 30px;
-  background-color: #F9F5EC;
-  border: none;
-  border-radius: 5px;
-}
-
-.images label {
-  margin-left: 10px;
-  margin-right: 10px;
-  color: white;
-}
-
-/* Error Page */
-
-
-.error {
-  color: white;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.errorPage{
-  justify-items: center;
-}
-
-.bulb {
-  width: 150px;
-}
-
