@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios'
 
 const AddWorkshop = () => {
@@ -60,7 +60,7 @@ const AddWorkshop = () => {
                 <input type="text" onChange={(event) => {
                     setDate(event.target.value)}}/>
                 <label>Price</label>
-                <input type="text"
+                <input type="number"
                   onChange={(event) => {
                   setPrice(event.target.value)
                   }}/>
