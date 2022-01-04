@@ -1,29 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Axios from 'axios'
 import { FaRegEdit } from 'react-icons/fa';
 import { FaRegTrashAlt } from 'react-icons/fa';
-import { FiSave } from 'react-icons/fi';
 
-
-const Front = ({val, edit}) => {
-
-  
-
-console.log(val)
-  // const [workshopList, setWorkshopList] = useState([])
-
-//   useEffect(() => {
-//     Axios.get('http://localhost:3001/home').then((response) => {
-//     setWorkshopList(response.data);
-//     }).catch(err => console.log(err));
-// }, [])
-
-
-
-//   <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
-
-// function myFunction(x) {
-//   x.classList.toggle("fa-thumbs-down");
+const Front = ({val, edit, deleteWorkshop}) => {
 
   const addImage = (name) => {
     return `img/${name}.jpg`
@@ -43,6 +22,7 @@ console.log(val)
                     <div className="editDeleteIcons">
 
                      <FaRegEdit className="editIcon" onClick={() => {edit(val.id)}}/>
+                     <FaRegTrashAlt onClick={() => {deleteWorkshop(val.id)}}/>
                     
                     </div>
                   </div>

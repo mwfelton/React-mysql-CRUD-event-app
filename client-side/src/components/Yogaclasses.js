@@ -47,12 +47,12 @@ function Yogaclasses() {
 
             const cards = document.querySelectorAll('.card')
 
-            cards.forEach(card => card.style.display = "none")
-
-            console.log(cards)
+            cards.forEach((card) => {
+                card.style.display = "none"
+                console.log(card.classList)
+            })
 
             const att = button.getAttribute("data-location")
-            console.log(att)
 
             for (let i = 0; i < cards.length; i++){
                 if (cards[i].classList.contains(`${att}`)){
@@ -64,21 +64,17 @@ function Yogaclasses() {
 
     filterControls()
 
-    // function filter() {
+    // const filter = () => {
+    //     const buttons = document.querySelectorAll('.controls button')
+    //     buttons.forEach(button => button.addEventListener('click', (e) => {
     //     const cards = document.querySelectorAll('.card')
     //     cards.forEach(card => card.style.display = "none")
-
-       
-    //     // const buttons = document.querySelectorAll('.controls button')
-    //     // const att = buttons.getAttribute("data-location")
-
-    //     // for (let i = 0; i < cards.length; i++){
-    //     //     // if (cards[i].classList.contains(`${att}`)){
-    //     //     //     console.log('got you')
-    //     //     // }
-            
-    //     // }
+    //     const att = button.getAttribute("data-location").toLowerCase()
+    //     console.log(att)
+    //     }))
     // }
+
+    // filter()
          
     return (
         <section className="yogaclasses">
@@ -103,8 +99,7 @@ function Yogaclasses() {
                     <div className="imagebox">
                     <img src={addImage(val.image)} alt=""></img>                
                     </div>
-                    {/* <img src={addImage(val.image)} alt=""></img>                 */}
-                    <h2 className="inputEdit">{val.title}</h2>
+                    <h2 className="classTitle">{val.title}</h2>
                     <h4 className="inputEdit">{val.location}</h4>
                     <p className="inputEdit">{val.date}</p>
                     <p className="inputEdit">{val.price}</p>

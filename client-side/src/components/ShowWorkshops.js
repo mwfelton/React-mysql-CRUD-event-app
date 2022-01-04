@@ -23,7 +23,15 @@ const ShowWorkshops = () => {
             setShowError(true)
             console.log(err)
           });
-        }, []) 
+        }, [])
+
+    const deleteWorkshop = (id) => {
+        Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+            setWorkshopList(workshopList.filter((val) => {
+            return val.id !== id
+            }))
+        })
+        }
   
     const saveButton = () => {
         setWorkshopId(null)
@@ -60,10 +68,15 @@ const ShowWorkshops = () => {
                     val={yoga} 
                     setWorkshopList={setWorkshopList} 
                     saveButton={saveButton}
-                    workshopList={workshopList} 
+                    workshopList={workshopList}
+                    deleteWorkshop={deleteWorkshop}
                     />
                     :
-                    <Front val={yoga} edit={edit}/>
+                    <Front 
+                    val={yoga} 
+                    edit={edit}
+                    deleteWorkshop={deleteWorkshop}
+                    />
                  )
              })}
 

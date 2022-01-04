@@ -4,7 +4,7 @@ import { FiSave } from 'react-icons/fi';
 import { FaRegTrashAlt } from 'react-icons/fa';
 
 
-const Back = ({val, workshopList, setWorkshopList, saveButton}) => {
+const Back = ({val, workshopList, setWorkshopList, saveButton, deleteWorkshop}) => {
 
   console.log(workshopList)
 
@@ -22,9 +22,9 @@ const Back = ({val, workshopList, setWorkshopList, saveButton}) => {
     const [newDate, setNewDate] = useState("")
 
 
-    const ifChanged = (newThing) => {
-      if (val.id === newThing){
-        return val.id
+    const ifNotChanged = (newThing, original) => {
+      if (newThing === "" || null){
+        return original
       } else {
         return newThing
       }
@@ -37,11 +37,11 @@ const Back = ({val, workshopList, setWorkshopList, saveButton}) => {
           workshopList.map((val) => {
             return val.id === id ? {
                 id: val.id,
-                title: newTitle,
-                location: newLocation,
-                date: newDate,
-                image: newImage,
-                price: newPrice
+                title: ifNotChanged(newTitle, val.title),
+                location: ifNotChanged(newLocation, val.location),
+                date: ifNotChanged(newDate, val.date),
+                image: ifNotChanged(newImage, val.image),
+                price: ifNotChanged(newPrice, val.price)
               }
               : val
           })
@@ -49,14 +49,6 @@ const Back = ({val, workshopList, setWorkshopList, saveButton}) => {
       })
       saveButton()
   }
-
-const deleteWorkshop = (id) => {
-  Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
-    setWorkshopList(workshopList.filter((val) => {
-      return val.id !== id
-    }))
-  })
-}
 
   const addImage = (name) => {
     const pic = name
@@ -75,7 +67,7 @@ const deleteWorkshop = (id) => {
             <input type="text" className="date" placeholder="Dates" onChange={(event) => {
                 setNewDate(event.target.value)}}/>
             <input type="text" className="price" placeholder="Price" onChange={(event) => {
-              setNewPrice(event.target.value)
+                setNewPrice(event.target.value)
               }}/>
 
             <p>Select Image</p>

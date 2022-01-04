@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import background from "../src-imgs/bg-overlay.jpg";
 import Navbar from './Navbar';
 import Content from './Content';
+import Slider from './slider-component/Slider';
 
   const Home = () => (
     <section>
@@ -15,6 +16,7 @@ import Content from './Content';
           </div>
       </div>
       <div>
+        <Slider />
         <Content />
       </div>
     </section>

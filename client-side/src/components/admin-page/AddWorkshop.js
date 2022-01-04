@@ -22,6 +22,8 @@ const AddWorkshop = () => {
     const resetForm = () => {
         document.getElementById("myForm").reset();
     }
+
+ 
     
     const addWorkshop = () => {
         Axios.post('http://localhost:3001/admin', {
@@ -43,6 +45,19 @@ const AddWorkshop = () => {
         })
     }
 
+    //    const validateLocation = () => {
+    //     const pattern = /([A-Z]{1})[a-z]+/
+    //     if (pattern.test(event.target.value)) {                    
+    //         setLocation(event.target.value)
+    //         } else {
+    //             alert('PENIS')
+    //         }
+
+    //     }
+
+
+    const pattern = /([A-Z]{1})[a-z]+/
+
     return (
         <section className="addWorkshopMain">
             <form action="" className="myForm">
@@ -54,8 +69,13 @@ const AddWorkshop = () => {
                 <input type="text" onChange={(event) => {
                     setTitle(event.target.value)}}/>
                 <label>Location</label>
-                <input type="text" onChange={(event) => {
-                    setLocation(event.target.value)}}/>
+                <input type="text" className="locationInput" onBlur={(event) => {
+                    if (pattern.test(event.target.value)) {                    
+                        setLocation(event.target.value)
+                        } else {
+                            alert('Please enter the location with one capital letter')
+                        }
+                        }}/>
                 <label>Dates</label>
                 <input type="text" onChange={(event) => {
                     setDate(event.target.value)}}/>
