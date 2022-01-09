@@ -1,37 +1,128 @@
-/* .container-slider {
-    width: 90%;
-    height: 420px;
-    margin: 20px auto 20px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  } */
-
   .container-slider {
-    /* max-width: 100vh; */
     height: 400px;
     justify-content: center;
-    /* align-items: center; */
-    /* justify-items: center; */
     margin: 20px;
-    /* flex-direction: column; */
     display: flex;
-    /* overflow: hidden; */
     box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
-
   }
 
   .sliderBox{
-        /* height: 500px; */
         width: 95%;
         background-color: skyblue;
         display: flex;
-        /* flex-direction: column; */
-        justify-content: space-around;
+        /* justify-content: space-around; */
+        align-items: center;
+        width: 95%;
+        height: 300px;
   }
 
-  .sliderContent {
+ .slider {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    background-color: burlywood;
+ }
 
+ .slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+ img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+ }
+
+  .btn-slide {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .btn-slide img {
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+  }
+
+  .active-anim {
+    opacity: 1;
+  }
+
+button {
+  margin: 4px ;
+}
+
+.btn-slide svg {
+  width: auto;
+}
+
+.textSide{
+  width: 40%;
+  margin: auto 20px auto 20px;
+}
+
+.rightSide {
+  width: 100%;
+  display: flex;
+  background-color: blue;
+  align-items: center;
+  
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.elements{
+  height: 400px;
+  width: 3px;
+}
+
+@media only screen and (max-width: 860px) {
+
+  .sliderBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide{
+    height: 30px;
+  }
+
+}
+
+
+
+
+  /* PRE BABU SESSION 
+
+  .container-slider {
+    height: 400px;
+    justify-content: center;
+    margin: 20px;
+    display: flex;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  }
+
+  .sliderBox{
+        width: 95%;
+        background-color: skyblue;
+        display: flex;
+        justify-content: space-around;
   }
 
   .sliderLeft {
@@ -98,4 +189,4 @@
 
   .active-anim {
     opacity: 1;
-  }
+  } */
