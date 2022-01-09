@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios'
-import { FaRegEdit } from 'react-icons/fa';
-import { FaRegTrashAlt } from 'react-icons/fa';
-// import { FiSave } from 'react-icons/fi';
-
-import Navbar from './Navbar';
 
 const AddWorkshop = () => {
 
@@ -15,8 +10,6 @@ const AddWorkshop = () => {
     const [date, setDate] = useState("")
 
     const [workshopList, setWorkshopList] = useState([])
-
-    const [newTitle, setNewTitle] = useState("")
 
     useEffect(() => {
         Axios.get('http://localhost:3001/home').then((response) => {
@@ -108,33 +101,8 @@ const AddWorkshop = () => {
             <div>
                 <button onClick={addWorkshop}>Add Workshop</button>
             </div>
-                
-            <div className="workshops">
-              {workshopList.map((val, key) => {
-                return (
+            </form>
 
-                  <div className="card">
-                      <img src={addImage(val.image)} alt=""></img>
-                      <div className='makeEditable'>
-                      <h2 className="inputEdit">{val.title}</h2>
-                      <h4 className="inputEdit">{val.location}</h4>
-                      <p className="inputEdit">{val.date}</p>
-                      <p className="inputEdit">{val.price}</p>
-                  </div>
-
-                  
-                    <div>
-                     <FaRegEdit onClick={() => {}}/>
-                     <FaRegTrashAlt onClick={() => {deleteWorkshop(val.id)}}/>
-                    </div>
-                  
-                    <input type="text" placeholder="edit this" onChange={(event) => {
-                      setNewTitle(event.target.value)
-                    }} />
-                    <button onClick={() => {updateTitle(val.id)}}>Update</button>
-              </div>
-                )})}
-             </div>
         </section>
 )};
 
