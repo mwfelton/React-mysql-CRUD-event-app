@@ -44,8 +44,13 @@ app.get('/home', (req, res) => {
 app.put('/update', (req, res) => {
     const id = req.body.id
     const title = req.body.title
-    db.query("UPDATE class SET title = ? WHERE id = ?", 
-    [title, id], 
+    const location = req.body.location
+    const date = req.body.date;
+    const image = req.body.image;
+    const price = req.body.price;
+    
+    db.query("UPDATE class SET title = ?, location = ?, date = ?, image = ?, price = ? WHERE id = ?", 
+    [title, location, date, image, price, id], 
     (err, result) => {
         if (err) {
             console.log(err)
