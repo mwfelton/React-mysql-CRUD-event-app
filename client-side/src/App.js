@@ -3,10 +3,9 @@ import './App.css';
 
 //admin page figure out
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Admin from './components/admin-page/Admin';
-import Home from './components/Home';
+import Admin from './pages/admin-page/admin-page.component';
+import Home from './pages/homepage/homepage.component.js';
 import Yogaclasses from './components/Yogaclasses';
-import LifeCoaching from './components/LifeCoaching';
 
 
 function App() {
