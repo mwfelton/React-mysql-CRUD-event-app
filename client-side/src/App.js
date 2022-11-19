@@ -1,27 +1,18 @@
-import './App.css';
-// import Admin from "./components/Admin.js"
+import '../src/App.css';
+import { Route, Routes, Outlet } from 'react-router-dom';
 
-//admin page figure out
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Admin from './pages/admin-page/admin-page.component';
-import Home from './pages/homepage/homepage.component.js';
-import Yogaclasses from './components/Yogaclasses';
+import Home from './routes/home/home.component';
+import Navbar from './components/header/header.component';
 
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navbar />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
+  )};
   
-return (
-  <Router>
-  {/* <Navbar /> */}
-  <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/admin" component={Admin} />
-    <Route path="/yoga-classes-zurich" component={Yogaclasses} />
-    {/* <Route path="/life-coaching" component={LifeCoaching} /> */}
-
-  </Switch>  
-</Router>
-)};
- 
 
 export default App;

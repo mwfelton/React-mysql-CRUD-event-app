@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+#root {
+  height: 100vh;
+}
+
+/* font */
+
+.App {
+  text-align: center;
+}
+
+section {
+  background-color: #36454F;
+}
+
+/* home page */
+
+.main-bg {
+  max-width: 100%;
+  height: auto;
+  min-height: 600px;  
+  background-size: cover;
+}
+
+.overlay {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+justify-items: center;
+margin-top: 120px;
+opacity: 100%;
+}
+
+.title {
+font-size: 8rem;
+letter-spacing: 3rem;
+color: white;
+opacity: none;
+}
+
+.sub-heading{
+font-size: 1.5rem;
+letter-spacing: 10px;
+color: white;
+}
+
+/* Navbar */
+
+.Navbar {
+width: 100%;
+height: 10vh;
+display: flex;
+}
+
+.Navbar .leftSide{
+flex: 20%;
+background-color: none;
+justify-content: center;
+align-items: center;
+display: flex;
+}
+
+.logo {
+letter-spacing: 3px;
+font-size: 1em;
+color: white;
+text-decoration: none;
+margin-left: 20px;
+}
+
+.Navbar .rightSide{
+flex: 80%;
+background: none;
+display: flex;
+justify-content: right;
+align-items: center;
+}
+
+.Navbar .rightSide .nav-links a {
+text-decoration: none;
+color: white;
+font-size: 1rem;
+margin-right: 30px;
+letter-spacing: 3px;
+}
+
+.Navbar .rightSide .nav-links a:not(:last-child) { 
+border-right:solid 1px #fff;
+padding-right: 30px;
+}
+
+.Navbar .rightSide button {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.Navbar .rightSide #hidden {
+display: flex;
+}
+
+.burger {
+color: white;
+}
+
+/* Admin Component */
+
+.main {
+  align-items: center;
+  background-color: #36454F;
+}
+
+.inputs {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+button {
+  margin: 20px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/* Yogaclasses */
+
+.yogaclasses {
+  background-color: #36454F;
+  height: 100vh;
+  width: 100vw;
+}
+
+.results {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.results h2 {
+  text-align: center;
+  color: #fff;
+  letter-spacing: 4px;
+}
+
+.classTitle {
+  color: black;
+  letter-spacing: 1.5px;
+}
+
+.workshopContainer {
+  background-color: #36454F;
+  width: 100vw;
+}
+
+.workshops{
+  justify-items: center;
+  max-width: 1000px;
+  margin:  auto;
+  padding: 10px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  background-color: #36454F;
+  grid-auto-rows: min-content;
+}
+
+.card-container {
+  width: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(200px, minmax(250px, 1fr));
+}
+
+.card {
+  border: 1px solid #fff;
+  text-align: center;
+  background-color: 
+ 
+  #F8F0E3;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.imagebox {
+ width: 100%;
+ height: 240px;
+ margin-bottom: 10px;
+ object-fit: cover;
+ overflow: hidden;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/* Yogaclass page controls */
+
+.controls button {
+  border: none;
+  color: white;
+  letter-spacing: 4px;
+  background-color: #36454F;
+  font-size: 1rem;
+  
+}
+
+/* Error Page */
+
+.error {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  letter-spacing: 2px;
+}
+
+.errorPage{
+  justify-items: center;
+}
+
+.zen {
+  width: 200px;
+  margin: 30px;
+}
+
+.bulb {
+  width: 150px;
+}
+
+/* Front & Back CARDS Components */
+
+/* Back Component  */
+
+/* .workshops{
+  justify-items: center;
+  max-width: 1000px;
+  margin:  auto;
+  padding: 10px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  background-color: #36454F;
+  grid-auto-rows: min-content; */
+
+  .frontCard {
+    border: 1px solid #fff;
+    text-align: center;
+    background-color: #D7DADC;
+    letter-spacing: 1px;
+    max-height: 470px;
+    overflow: auto;
+
+  }
+
+  .info {
+    margin-top: 5px;
+    margin-bottom: 7px;
+  }
+
+
+.backCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center ;
+  align-items: center;
+  border: 1px solid #fff;
+  text-align: center;
+  background-color: #D7DADC;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.backCard input{
+  margin: 5px;
+  width: 65%;
+  text-align: center;
+  background-color: #EFEAE7;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.backCard .location {
+  font-size: 1rem;
+}
+
+.backCard .date {
+  font-size: 1rem;
+}
+
+.backCard .price {
+  font-size: 1rem;
+}
+
+.backCard img{
+  margin-bottom: 10px;
+}
+
+.backCard p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.editImage {
+  display: flex;
+  width: 85%;
+}
+
+.editDeleteIcons {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.editDeleteIconsBack {
+  width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* AddWorkshop Component */
+
+.inputSection .addBorder{
+  border: solid 2px orange;
+}
+
+.addWorkshopMain form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.addWorkshopMain p, h3{
+  color: white;
+  margin-bottom: 10px;
+}
+
+.inputSection label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.inputSection  {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.inputSection input {
+  margin-right: 30px;
+  background-color: #F9F5EC;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.selectImage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.images input {
+  margin-right: 30px;
+  background-color: #F9F5EC;
+  border: none;
+  border-radius: 5px;
+}
+
+.images label {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+
+/* content page */
+
+.contentMain {
+height: 500px;  
+background-color: #36454F;
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+}
+
+.contentSection{
+  background-color: #36454F;
+  height: 100vh;
+}
+
+.whatWeTeach {
+  width: 90%;
+  background-color: #F9F5EC;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whatWeTeach h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.workshopCards {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.workshopCard {
+  border: solid 1px blue;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  justify-content: space-evenly;
+  height: 200px;
+}
+
+.workshopCard h2 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.workshopCard p {
+  font-size: .8rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.contentButton{
+  background-color: #36454F;
+  color: white;
+  letter-spacing: 2px;
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+  height: 1.5rem;
+}
+
+/* HOME CONTENT New*/
+
+.mainSection {
+  height: 500px;  
+  background-color: #36454F;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.content1{
+  
+  width: 90%;
+  background-color: cadetblue;
+  display: flex;
+  height: 500px;
+}
+
+.content2 h1 {
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.content2 p {
+  font-size: 1rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.content2{
+  width: 35%;
+  background-color: darkmagenta;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: none;
+}
+
+.content3{
+  width: 65%;
+  background-color: crimson;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sliderImage{
+  width: 100%;
+  background-color: chocolate;
+  max-height: 90%;
+  margin-bottom: 10px;
+
+    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forwardArrow {
+  font-size: 2.5rem;
+}
+
+.forwardBack {
+  font-size: 2.5rem;
+}
+
+
+
+
+/* Responsive */
+
+@media only screen and (min-width: 860px) {
+  .break {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .Navbar .rightSide .nav-links a {
+    font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+
+
+.inputSection input {
+  display: block;
+  width: 300px;
+  margin-bottom: 10px;
+}
+.inputSection input label {
+  align-items: center;
+}
+
+.addWorkshopMain form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+  .Navbar .rightSide button {
+    display: flex;
+  }
+
+  .Navbar .rightSide .nav-links {
+    display: none;
+  }
+
+  .Navbar .rightSide .nav-links a:not(:last-child) { 
+    border-right:none;
+    padding-right: 0px;
+  }
+
+  .Navbar .rightSide #hidden {
+    position: absolute;
+    right: 0px;
+    top: 10vh;
+    height: 230px;
+    width: 100%;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .Navbar .rightSide #hidden a{
+    margin-top: 15px;
+    font-size: 1rem;
+    margin-right: 25px;
+  }
+
+  .Navbar .leftSide {
+    margin-left: 15px;
+  }
+
+  .title-container {
+    margin-top: 50px;
+    /* margin-bottom: 40px; */
+  }
+
+  .title {
+    font-size: 2rem;
+    letter-spacing: 23px;
+    margin-bottom: 10px;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+    letter-spacing: 10px;
+  }
+
+  .main-bg {
+    min-height: 200px;
+    height: 300px;
+  }
+
+  .results {
+    margin-top: 20px;
+  }
+}
+
+.editDeleteIcons {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+
