@@ -1,13 +1,41 @@
-// import { GoThreeBars } from "react-icons/go";
+import { Fragment } from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import { ReactComponent as DummyLogo } from '../../assets/dummy.svg'
 
-function Navbar() {
+import '../header/header.styles.css';
+
+const Navbar = () => {
+    return (
+        <Fragment>
+            <div className="navigation">
+                <Link className='nav-link' to='/'>
+                    <DummyLogo  className="logo" />
+                </Link>
+                <div className='nav-links-container  '>
+                    <Link className='nav-link' to='/workshops'>
+                        Workshops
+                    </Link>
+                    <Link className='nav-link' to='/signin'>
+                        Sign In
+                    </Link>
+                    <Link className='nav-link' to='/contact'>
+                        Contact
+                    </Link>
+                </div>  
+            </div>
+            <Outlet />
+        </Fragment>
+    )
+}
+
+export default Navbar
+
+// OG YA Navbar
 
     // const [showLinks, setShowLinks] = useState(false);
+// import { GoThreeBars } from "react-icons/go";
 
-    return (
-        <div className="Navbar">
-            <h1>NAVIGATION</h1>
-            {/* <div className="leftSide">
+ {/* <div className="leftSide">
                 <h1><a className="logo" href="/">Yogaagma</a></h1>
             </div> */}
             {/* <div className="rightSide">
@@ -19,11 +47,6 @@ function Navbar() {
                 </div>
                 <button onClick={() => setShowLinks(!showLinks)}><GoThreeBars size={35} className="burger"/></button>
             </div> */}
-        </div>
-    )
-}
-
-export default Navbar
 
 // import React from "react";
 // import { Link } from 'react-router-dom';
