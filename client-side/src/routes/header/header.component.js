@@ -21,6 +21,9 @@ const Navbar = () => {
                     <Link className='nav-link' to='/contact'>
                         Contact
                     </Link>
+                    <Link className='nav-link' to='/admin'>
+                        Admin
+                    </Link>
                 </div>  
             </div>
             <Outlet />
