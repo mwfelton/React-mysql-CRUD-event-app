@@ -1,4 +1,4 @@
-import SignInForm from "../../components/sign-in.component/sign-in.component";
+import SignInForm from "../../components/sign-in/sign-in.component";
 
 const SignIn = () => (
     <div className="title-container">
