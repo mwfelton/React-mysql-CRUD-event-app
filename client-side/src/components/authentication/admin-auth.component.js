@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils'
+
+import { AdminContext } from '../../contexts/admin.context'
 
 const defaultFormFields = {
   email: '',
@@ -9,6 +11,8 @@ const defaultFormFields = {
 const AdminSignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+
+  const { setCurrentAdmin, currentAdmin } = useContext(AdminContext)
   
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -18,11 +22,13 @@ const AdminSignIn = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { admin } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+      setCurrentAdmin(admin)
+      console.log(currentAdmin)
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {

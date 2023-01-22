@@ -5,10 +5,14 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import AdminProvider from './contexts/admin.context.jsx'
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AdminProvider>
+        <App />
+      </AdminProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
