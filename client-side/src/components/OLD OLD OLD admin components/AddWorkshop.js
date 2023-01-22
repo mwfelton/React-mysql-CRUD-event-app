@@ -50,7 +50,7 @@ const AddWorkshop = () => {
     //     if (pattern.test(event.target.value)) {                    
     //         setLocation(event.target.value)
     //         } else {
-    //             alert('PENIS')
+    //             alert('fail')
     //         }
 
     //     }
