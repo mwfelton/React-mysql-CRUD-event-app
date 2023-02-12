@@ -12,7 +12,7 @@ const AdminSignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const { setCurrentAdmin, currentAdmin } = useContext(AdminContext)
+  const { currentAdmin, setCurrentAdmin } = useContext(AdminContext)
   
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
