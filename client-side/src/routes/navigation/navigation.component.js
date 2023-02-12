@@ -1,14 +1,10 @@
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { ReactComponent as DummyLogo } from '../../assets/dummy.svg'
-
-import { AdminContext } from '../../contexts/admin.context'
 
 import './header.styles.css';
 
 const Navbar = () => {
-    const { currentAdmin } = useContext(AdminContext);
-    console.log( currentAdmin )
     return (
         <Fragment>
             <div className="navigation">

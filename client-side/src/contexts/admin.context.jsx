@@ -1,16 +1,44 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import {
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signOut,
+    // signOut,
+    // onAuthStateChanged
+} from 'firebase/auth'
 
-export const AdminContext = createContext({
-    currentAdmin: null,
-    setCurrentAdmin: () => null
-});
+import { auth } from '../utils/firebase/firebase.utils'
 
-const AdminProvider = ({ children }) => {
-    const [currentAdmin, setCurrentAdmin] = useState(null)
-    const value = { currentAdmin, setCurrentAdmin}
+const UserContext = createContext();
 
-    return <AdminContext.Provider value={value}>{children}</AdminContext.Provider>
+export const AuthContextProvider = ({ children }) => {
+    const [user, setUser] = useState({})
+
+    const signIn = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const logout = () => {
+        return signOut(auth)
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            console.log(user)
+            setUser(currentUser)
+        })
+        return () => {
+            unsubscribe()
+        }
+    })
+
+    return (
+        <UserContext.Provider value={{signIn, user, logout}}>
+            {children}
+        </UserContext.Provider>
+    )
 };
 
-export default AdminProvider
-
+export const UserAuth = () => {
+    return useContext(UserContext)
+}

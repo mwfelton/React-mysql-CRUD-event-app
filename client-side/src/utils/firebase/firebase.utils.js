@@ -15,9 +15,3 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth()
 
 export default app
-
-  // export const signInAuthUserWithEmailAndPassword = async (email, password) => {
-  //   if (!email || !password) return;
-  
-  //   return await signInWithEmailAndPassword(auth, email, password);
-  // };
