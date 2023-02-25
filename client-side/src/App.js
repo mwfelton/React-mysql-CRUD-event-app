@@ -8,10 +8,15 @@ import  Contact from './routes/contact/contact-page.component';
 import  Admin from './routes/admin/admin-page.component';
 import { AuthContextProvider } from './contexts/admin.context'
 import { ProtectedRoute } from './components/ProtectedRoute.component'
+import { WorkshopProvider } from './contexts/workshop.context'
+import { CartProvider } from './contexts/cart.context'
+
 
 function App() {
   return (
     <AuthContextProvider>
+      <WorkshopProvider>
+      <CartProvider>
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
@@ -25,6 +30,8 @@ function App() {
           />
         </Route>
       </Routes>
+      </CartProvider>
+      </WorkshopProvider>
     </AuthContextProvider>
   )};
   
