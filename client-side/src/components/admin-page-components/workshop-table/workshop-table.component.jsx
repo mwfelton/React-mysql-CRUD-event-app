@@ -1,11 +1,15 @@
-import './workshop-card.styles.scss';
-import { useContext } from 'react';
-import { CartContext } from '../../contexts/cart.context'; 
+import './workshop-table.styles.scss';
+import { useState } from 'react';
+import { doc, deleteDoc} from "firebase/firestore";
+import { db } from "../../../utils/firebase/firebase.utils"
 
-const WorkshopCard = ({ workshop }) => {
+const WorkshopTable = ({ workshop }) => {
     console.log(workshop)
     const { country, price, date, id, location, practice, sessions, img } = workshop;
-    const {addItemToCart} = useContext(CartContext)
+
+    const handleDelete = async (id) => {
+          await deleteDoc(doc(db, "upcoming-workshops", id));
+      }
 
     return (
         <div className='workshop-card-container'>
@@ -18,10 +22,10 @@ const WorkshopCard = ({ workshop }) => {
                 <p>{sessions}</p>
             </div>
             <div className='footer'>
-                <button onClick={() => addItemToCart(workshop)}>Add to Cart</button>
+                <button onClick={() => handleDelete(id)}>Delete</button>
             </div>
         </div>
     )
 }
 
-export default WorkshopCard;
+export default WorkshopTable;
