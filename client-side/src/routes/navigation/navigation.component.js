@@ -24,8 +24,8 @@ const Navbar = () => {
                     <Link className='nav-link' to='/contact'>
                         Contact
                     </Link>
-                    <Link className='nav-link' to='/admin'>
-                        Admin
+                    <Link className='nav-link' to='/admin-signin'>
+                        Admin Login
                     </Link>
                     <CartIcon />
                 </div>
