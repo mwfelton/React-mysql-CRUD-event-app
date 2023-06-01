@@ -5,7 +5,8 @@ import Home from './routes/home/home.component';
 import Navbar from './routes/navigation/navigation.component';
 import Workshops from './routes/workshops/workshops-page.component';
 import Contact from './routes/contact/contact-page.component';
-import Admin from './routes/admin/admin-page.component';
+import AdminPage from './routes/admin-page/admin-page.component';
+import AdminSignIn from './routes/admin-signIn/admin-signIn.component'
 import Checkout from './routes/checkout/checkout.component';
 
 import { AuthContextProvider } from './contexts/admin.context'
@@ -25,9 +26,10 @@ function App() {
           <Route path='workshops' element={<Workshops />} />
           <Route path='contact' element={<Contact />} />
           <Route path='checkout' element={<Checkout />} />
-          <Route path='admin' element={
+          <Route path='sign-in' element={<AdminSignIn />} />
+          <Route path='admin-page' element={
           <ProtectedRoute>
-            <Admin />
+            <AdminPage />
           </ProtectedRoute>
           } 
           />
