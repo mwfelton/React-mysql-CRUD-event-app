@@ -4,7 +4,7 @@ import { CartContext } from '../../contexts/cart.context';
 
 const WorkshopCard = ({ workshop }) => {
     console.log(workshop)
-    const { country, price, date, id, location, practice, sessions, img } = workshop;
+    const { country, price, location, practice, sessions, img } = workshop;
     const {addItemToCart} = useContext(CartContext)
 
     return (

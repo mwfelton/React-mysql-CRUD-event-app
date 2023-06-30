@@ -1,7 +1,7 @@
 import React from 'react'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-import { doc, collection, addDoc, serverTimestamp, deleteDoc} from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import {db, storage} from "../../../utils/firebase/firebase.utils"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
@@ -17,7 +17,6 @@ const AddWorkshop = () => {
   // upload image
   useEffect(() => {
     const uploadFile = () => {
-      const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, file.name);
 
       const uploadTask = uploadBytesResumable(storageRef, file);

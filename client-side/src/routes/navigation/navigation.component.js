@@ -1,12 +1,9 @@
 import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { ReactComponent as DummyLogo } from '../../assets/lotus-2-svgrepo-com.svg'
+import { ReactComponent as DummyLogo } from '../../assets/YA-yantra.svg'
 
 import { UserAuth } from "../../contexts/admin.context";
 import { useNavigate } from "react-router-dom";
-
-import CartIcon from '../../components/cart-icon/cart-icon.component'
-import CartDropDown from '../../components/cart-dropdown/cart-dropdown.component'
 
 import './header.styles.css';
 import { CartContext } from '../../contexts/cart.context';
