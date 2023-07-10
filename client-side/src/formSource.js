@@ -24,12 +24,6 @@ export const userInputs = [
       placeholder: "£0.00",
     },
     {
-      id: "country",
-      label: "Country",
-      type: "text",
-      placeholder: "country",
-    },
-    {
       id: "sessions",
       label: "Number of Sessions",
       type: "text",
