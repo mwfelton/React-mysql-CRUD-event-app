@@ -5,16 +5,15 @@
 /* ------------------- */
 
 .logo {
-    width: 30px;
-    height: auto;
+    width: 70px;
 }
 
-.navigation {
-    /* height: 70px; */
+.navbar_wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    align-items: center; 
+    padding-top: 10px;
 }
 
 .nav-links-container {
@@ -29,6 +28,11 @@
     padding: 10px 15px;
     cursor: pointer;
 }
+
+.navbar_links {
+    margin-right: 20px; 
+}
+
 
 /* 
 

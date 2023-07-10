@@ -1,30 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&family=Ysabeau&display=swap');
 
 .section_hero_bg {
-    /* z-index: -100;
-    object-fit: fill;
-    background-image: linear-gradient(transparent,#19475F),url('/src/assets/src-imgs/cropped-bg.jpg');
-    background-position: 0 0,50% 0;
-    background-repeat: repeat,no-repeat;
-    /* background-size: auto,cover; */
-    /* background-size:contain;
-    position: absolute;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    right: 0%; */
     z-index: -100;
     object-fit: fill;
     background-image: linear-gradient(transparent,#19475F),url('/src/assets/src-imgs/cropped-bg.jpg');
     background-position: 0 0,50% 0;
     background-repeat: repeat,no-repeat;
     background-size: auto,cover;
+    /* background-size:contain; */
     position: absolute;
-    top: -15%;
+    top: -20%;
     bottom: 0%;
     left: 0%;
     right: 0%;
-    height: 650px;
 }
 
 .title h1{
@@ -60,7 +48,7 @@
 
 .title {
     margin-top: 6rem;
-    margin-top: 17rem;
+    margin-top: 15rem;
     margin-left: 3rem;
 }
 

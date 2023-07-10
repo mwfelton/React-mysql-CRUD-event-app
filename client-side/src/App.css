@@ -4,4 +4,8 @@ body {
   background: #01889f;  
   margin: 0;
 }
+
+#root {
+  width: 100vw;
+}
   
