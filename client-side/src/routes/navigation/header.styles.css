@@ -1,19 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&family=Ysabeau&display=swap');
 
-/* 
-/* ------------------- */
-
-.logo {
-    width: 70px;
-}
 
 .navbar_wrapper {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding-top: 10px;
+    justify-content: center;
+    padding-top: 25px;
 }
 
 .nav-links-container {
@@ -25,9 +18,20 @@
 }
 
 .nav-link {
+    font-family: 'Ysabeau', sans-serif;
     padding: 10px 15px;
     cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: lighter;
 }
+
+.nav-link:hover {
+    color: red; /* Change the color on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
 
 .navbar_links {
     margin-right: 20px; 

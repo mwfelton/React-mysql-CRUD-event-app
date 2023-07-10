@@ -27,11 +27,6 @@ const Navbar = () => {
         <>
             <div className='navbar'>
                 <div className='navbar_wrapper'>
-                    <div className='logo'>
-                        <Link className='nav-link' to='/'>
-                            <DummyLogo  className="logo" />
-                        </Link>
-                    </div>
                     <div className='navbar_links'>
                         <Link className='nav-link' to='/admin-page'>
                             Admin Page
