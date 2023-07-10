@@ -6,9 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import './add-workshop.styles.scss';
 
-const PreviewCard = ({ data, file }) => {
-
-    console.log(file)
+const PreviewCard = ({ data }) => {
 
     return (
         <div className='preview-main'>
